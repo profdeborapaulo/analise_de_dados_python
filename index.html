@@ -1,16 +1,195 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teste</title>
-    <style>
-        h1 {
-            color: blue;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Curso: Análise de Dados com Python — Projeto Final: Spotify Top50</title>
+  <meta name="description" content="Aprenda análise de dados com Python aplicando técnicas reais ao dataset Spotify Top50. Projeto final prático, aulas hands-on e mentoria.">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#1db954; --muted:#9aa4b2; --glass: rgba(255,255,255,0.03);
+      --maxw:1100px; --radius:14px; --gap:20px; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071026 0%, #071827 60%);color:#e6eef6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px}
+    .wrap{width:100%;max-width:var(--maxw)}
+
+    header{display:flex;gap:20px;align-items:center;margin-bottom:28px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#74d18b);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042125}
+    h1{font-size:22px;margin:0}
+    p.lead{margin:0;color:var(--muted)}
+
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:var(--radius);display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:center;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+
+    .hero-left h2{font-size:28px;margin:0 0 8px}
+    .pill{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px;margin-bottom:12px}
+    .features{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .feature{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;min-width:120px;text-align:center}
+    .feature b{display:block;font-size:14px}
+    .price-cta{margin-top:18px;display:flex;gap:12px;align-items:center}
+    .price{font-size:20px;font-weight:700}
+    .btn{background:var(--accent);color:#042125;padding:12px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+    .project-sample{display:flex;flex-direction:column;gap:12px}
+    .project-sample img{width:100%;border-radius:10px;object-fit:cover;height:160px}
+
+    main{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:20px}
+    .content{background:transparent}
+    .section{background:var(--card);border-radius:12px;padding:18px;margin-bottom:14px}
+    h3{margin:0 0 10px}
+    ul{margin:0;padding-left:18px;color:var(--muted)}
+
+    .sidebar .box{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px;margin-bottom:12px}
+    .instructor{display:flex;gap:12px;align-items:center}
+    .avatar{width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,#ffffff11,#ffffff05);display:flex;align-items:center;justify-content:center;font-weight:700}
+
+    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* Responsivo */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      main{grid-template-columns:1fr}
+      .hero-left h2{font-size:20px}
+    }
+  </style>
 </head>
 <body>
-    <h1>teste</h1>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="mark">AD</div>
+        <div>
+          <h1>Curso: Análise de Dados com Python</h1>
+          <p class="lead">Projeto final prático: Analisar a base <strong>Spotify Top50</strong> — do dado ao insight.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <span class="pill">Online • Hands-on • Vagas Limitadas</span>
+        <h2>Aprenda Python, Pandas e Visualização aplicando ciência de dados ao Spotify Top50</h2>
+        <p class="lead">Em 8 semanas você terá domínio básico-médio em análise de dados: limpeza, exploração, visualizações e modelagem simples — tudo com exercícios práticos e um projeto final real.</p>
+
+        <div class="features" aria-hidden>
+          <div class="feature"><b>8 semanas</b><small> (4h/sem)</small></div>
+          <div class="feature"><b>Pandas & Matplotlib</b><small> E Seaborn</small></div>
+          <div class="feature"><b>Projeto Real</b><small> Spotify Top50</small></div>
+          <div class="feature"><b>Mentoria</b><small> Feedbacks práticos</small></div>
+        </div>
+
+        <div class="price-cta">
+          <div class="price">R$ Gratuito!!! <span style="font-size:12px;font-weight:400;color:var(--muted)"> à vista</span></div>
+          <button class="btn">Quero me inscrever</button>
+          <button class="btn ghost">Ver programa</button>
+        </div>
+
+        <div style="margin-top:18px;color:var(--muted);font-size:14px">Turma prevista: <strong>Início 06/10/2025</strong> • Certificado ao final</div>
+      </div>
+
+      <aside class="card">
+        <div class="project-sample">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Gráfico exemplo">
+          <div>
+            <h4 style="margin:0">Projeto final: Análise do Spotify Top50</h4>
+            <p style="margin:6px 0;color:var(--muted);font-size:14px">Exploração do dataset Top50 do Spotify — entender popularidade, atributos de áudio (danceability, energy, tempo), segmentar por país e descobrir insights acionáveis.</p>
+            <a href="#programa" style="color:var(--accent);font-weight:700;text-decoration:none">Ver objetivos do projeto →</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <main>
+      <div class="content">
+        <section class="section">
+          <h3>O que você vai aprender</h3>
+          <ul>
+            <li>Python para análise de dados: estruturas, leitura/escrita de CSV e manipulação com <strong>pandas</strong>.</li>
+            <li>Limpeza de dados: tratar valores ausentes, normalização e transformação de colunas.</li>
+            <li>Análise exploratória: estatísticas descritivas, agregações e pivot tables.</li>
+            <li>Visualização: Matplotlib, Seaborn e boas práticas de storytelling com dados.</li>
+            <li>Modelos simples: agrupamento (k-means), regressão linear e criação de métricas personalizadas.</li>
+            <li>Entrega: criação de relatório (Jupyter Notebook) e apresentação dos insights.</li>
+          </ul>
+        </section>
+
+        <section id="programa" class="section">
+          <h3>Programa / Módulos</h3>
+          <ol style="padding-left:20px;color:var(--muted)">
+            <li><b>Módulo 1 - Fundamentos Python</b> — tipos, estruturas, funções e ambiente (Jupyter).</li>
+            <li><b>Módulo 2 - Pandas Essencial</b> — leitura, seleção, merge, groupby e transformação.</li>
+            <li><b>Módulo 3 - Limpeza & Engenharia</b> — detectar e tratar outliers, valores faltantes e feature engineering.</li>
+            <li><b>Módulo 4 - Visualização & Storytelling</b> — gráficos, dashboards simples e narrativa visual.</li>
+            <li><b>Módulo 5 - Técnicas Analíticas</b> — clustering, correlações e análise de variância.</li>
+            <li><b>Módulo 6 - Projeto Final</b> — análise completa do dataset Spotify Top50 e apresentação final.</li>
+          </ol>
+        </section>
+
+        <section class="section">
+          <h3>Projeto final — descrição</h3>
+          <p style="color:var(--muted)">O dataset Spotify Top50 contém as músicas mais populares por região com atributos de áudio. No projeto final você deverá:</p>
+          <ul>
+            <li>Fazer ingestão do dataset (CSV), limpar e documentar o processo.</li>
+            <li>Realizar análise exploratória: quais atributos explicam popularidade?</li>
+            <li>Visualizar tendências por país, gênero e medidas de energia/danceability.</li>
+            <li>Aplicar clustering para segmentar canções e interpretar os grupos.</li>
+            <li>Entregar um notebook comentado e uma apresentação de até 8 minutos com os principais insights e recomendações.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h3>Para quem é</h3>
+          <p style="color:var(--muted)">Profissionais de áreas diversas que desejam aprender análise de dados aplicada — não é necessário experiência prévia em programação. Recomendamos conhecimento básico em Excel.</p>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-size:13px;color:var(--muted)">Duração</div>
+              <div style="font-weight:700">8 semanas</div>
+            </div>
+            <div>
+              <div style="font-size:13px;color:var(--muted)">Formato</div>
+              <div style="font-weight:700">Ao vivo + Gravado</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="instructor">
+            <div class="avatar">DB</div>
+            <div>
+              <div style="font-weight:700">Debora B. Paulo</div>
+              <div style="color:var(--muted);font-size:13px">Instrutora — Data Analyst</div>
+            </div>
+          </div>
+          <p style="margin-top:10px;color:var(--muted);font-size:14px">Mentoria personalizada, correção de notebooks e feedbacks nas apresentações finais.</p>
+        </div>
+
+        <div class="box">
+          <h4 style="margin-top:0">FAQ Rápido</h4>
+          <ul style="color:var(--muted)">
+            <li>Preciso instalar algo? — Sim: Python 3.10+, Jupyter e bibliotecas (lista fornecida).</li>
+            <li>Datas das aulas? — Aulas semanais ao vivo + gravações.</li>
+            <li>Certificado? — Sim, ao concluir o projeto final.</li>
+          </ul>
+        </div>
+
+        <div class="box" style="text-align:center">
+          <div style="font-size:13px;color:var(--muted)">Pronto para começar?</div>
+          <button class="btn" style="margin-top:10px">Inscreva-se agora</button>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>© 2025 Curso Análise de Dados com Python • Projeto: Spotify Top50</div>
+    </footer>
+  </div>
 </body>
 </html>
