@@ -1,0 +1,38 @@
+# Use 'import' APENAS no código Python, não no terminal
+import pandas as pd 
+
+# Agora sim você pode usar 'pd' para chamar as funções do Pandas
+caminho_arquivo = 'seu_arquivo.csv'
+df = pd.read_csv(caminho_arquivo)
+
+print(df.head())
+
+ 1. Defina o caminho do arquivo
+#
+# Se o arquivo CSV estiver na MESMA pasta que seu arquivo Python:
+
+
+# Se o arquivo CSV estiver em OUTRA pasta:
+# caminho_arquivo = 'C:/caminho/completo/para/seu/arquivo.csv'
+# OU
+# caminho_arquivo = '../dados/nome_do_seu_arquivo.csv' # (se estiver uma pasta acima)
+
+try:
+    # 2. Carregue o CSV para um DataFrame do Pandas
+    df = pd.read_csv(caminho_arquivo)
+    
+    # 3. Comece a sua análise!
+    print("Arquivo carregado com sucesso!")
+    
+    # Exibe as 5 primeiras linhas
+    print("\n-- Primeiras linhas --")
+    print(df.head())
+    
+    # Exibe informações sobre as colunas e tipos de dados
+    print("\n-- Informações do DataFrame --")
+    df.info()
+    
+except FileNotFoundError:
+    print(f"ERRO: Arquivo não encontrado no caminho: {caminho_arquivo}")
+except Exception as e:
+    print(f"Ocorreu um erro ao carregar o arquivo: {e}")
