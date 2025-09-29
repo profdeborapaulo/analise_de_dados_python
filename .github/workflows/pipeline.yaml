@@ -1,0 +1,43 @@
+# Define o nome do seu workflow, que aparecerá no GitHub Actions
+name: CI Básico
+
+# Define o(s) evento(s) que disparam este workflow
+on:
+  # O pipeline será executado em qualquer push para o branch 'main'
+  push:
+    branches: [ "main" ]
+
+  # Permite rodar o workflow manualmente pela aba Actions do GitHub
+  workflow_dispatch:
+
+# Define um ou mais jobs que serão executados sequencialmente ou em paralelo
+jobs:
+  # Nome do primeiro e único job
+  build-and-test:
+    # Define o sistema operacional onde o job será executado (servidor virtual)
+    runs-on: ubuntu-latest
+
+    # Os passos (steps) que o job irá executar
+    steps:
+    
+      # Passo 1: Faz o checkout do código do seu repositório
+      # Esta é uma "Action" pré-construída pelo GitHub
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+        
+      # Passo 2: Exibe uma mensagem simples no console
+      - name: Mensagem de Boas-Vindas
+        run: echo "Iniciando o Pipeline de Integração Contínua!"
+        
+      # Passo 3: Exemplo de comando útil para CI
+      - name: Verificar Versão do Git
+        run: git --version
+        
+      # Passo 4: Se o seu projeto fosse Node.js, por exemplo,
+      # aqui você teria o passo de instalação de dependências.
+      # - name: Instalar Dependências (Exemplo)
+      #   run: npm install
+        
+      # Passo 5: E aqui o passo de rodar os testes.
+      # - name: Rodar Testes (Exemplo)
+      #   run: npm test
